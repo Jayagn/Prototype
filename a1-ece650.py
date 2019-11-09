@@ -41,6 +41,17 @@ def intersection(l1, l2):
     else:
         return None
 
+def Graph(vertice_dict, edge_list):
+    print("V" + " " + str(len(vertice_dict)))
+    sys.stdout.write("E {")
+    for e in range(len(edge_list)):
+        if e == len(edge_list) - 1:
+            sys.stdout.write("<" + str(edge_list[e][0]) + "," + str(edge_list[e][1]) + ">")
+        else:
+            sys.stdout.write("<" + str(edge_list[e][0]) + "," + str(edge_list[e][1]) + ">,")
+    print("}")
+    sys.stdout.flush()
+
 
 def distance_sort(vertices):
     for i in range(len(vertices)):
@@ -80,17 +91,6 @@ def g_vertice_edge(vertices):
                 edge_list.append((vertice_dict[vertices[i][j][k][0]], vertice_dict[vertices[i][j][k + 1][0]]))
 
     return vertice_dict, edge_list
-
-def Graph(vertice_dict, edge_list):
-    print("V" + " " + str(len(vertice_dict)))
-    sys.stdout.write("E = {")
-    for e in range(len(edge_list)):
-        if e == len(edge_list) - 1:
-            sys.stdout.write("<" + str(edge_list[e][0]) + "," + str(edge_list[e][1]) + ">")
-        else:
-            sys.stdout.write("<" + str(edge_list[e][0]) + "," + str(edge_list[e][1]) + ">,")
-    print("}")
-    sys.stdout.flush()
 
 
 Dictionary = {}
